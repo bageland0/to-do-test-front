@@ -1,0 +1,333 @@
+<head>
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+        crossorigin="anonymous"
+    />
+</head>
+<body>
+    <header>
+        <div class="container py-4 px-3">
+            <nav class="d-flex justify-content-end w-100 fs-5">
+                <a id="username" class="me-3 text-decoration-none">Имя</a>
+                <a href="#" id="logout">Выйти</a>
+            </nav>
+        </div>
+    </input>
+    <main>
+        <div class="container px-3 pt-5">
+            <form
+                class="w-50 mx-auto mb-5"
+                id="formCreateTodo"
+                method="post"
+            >
+                <div class="input-group">
+                    <input
+                        id="inputCreateTodo"
+                        type="text"
+                        class="form-control fs-3"
+                        placeholder="Назовите список"
+                        name="name"
+                    />
+                    <button
+                        class="bg-primary btn fs-4 btn-outline-primary text-white"
+                        type="submit"
+                        id="button-addon1"
+                    >
+                        Создать
+                    </button>
+                </div>
+            </form>
+            <div class="todos" id="todos">
+                <div class="todo card">
+                    <div class="card-header text-center">
+                        <div class="d-flex justify-content-between">
+                            <form action="" class="mb-0 me-3" method="post">
+                                <div class="input-group">
+                                    <input
+                                        type="hidden"
+                                        name="id"
+                                        value="1"
+                                    />
+                                    <input
+                                        type="text"
+                                        class="form-control fs-3"
+                                        placeholder="На лето"
+                                        name="name"
+                                    />
+                                    <button
+                                        class="bg-warning-subtle btn btn-outline-warning text-black"
+                                        type="submit"
+                                        id="button-addon1"
+                                    >
+                                        Обновить
+                                    </button>
+                                </div>
+                            </form>
+                            <form class="" action="" method="post">
+                                <input type="hidden" name="id" value="1" />
+                                <button
+                                    class="bg-danger-subtle btn btn-outline-danger w-100 text-black"
+                                    type="submit"
+                                >
+                                    Удалить
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <button
+                            class="bg-info btn fs-5 btn-outline-info text-white"
+                            type="submit"
+                            id="resetTasks"
+                        >
+                            Сбросить
+                        </button>
+                        <form
+                            class="w-50 mx-auto mb-3"
+                            id="formFindTask"
+                            method="post"
+                        >
+                            <div class="input-group">
+                                <input type="hidden" name="id" value="1" />
+                                <input
+                                    type="hidden"
+                                    name="todo_id"
+                                    value="1"
+                                />
+                                <textarea
+                                    id="nameFindTask"
+                                    type="text"
+                                    class="form-control fs-4"
+                                    placeholder="Найди задачу"
+                                    name="name"
+                                ></textarea>
+                                <button
+                                    class="bg-info btn fs-5 btn-outline-info text-white"
+                                    type="submit"
+                                    id="button-addon1"
+                                >
+                                    Найти
+                                </button>
+                            </div>
+                        </form>
+                        <form
+                            class="w-50 mx-auto mb-5"
+                            id="formFindByTagTask"
+                            method="post"
+                        >
+                            <div class="input-group">
+                                <input type="hidden" name="id" value="1" />
+                                <input
+                                    type="hidden"
+                                    name="todo_id"
+                                    value="1"
+                                />
+                                <textarea
+                                    id="nameFindTask"
+                                    type="text"
+                                    class="form-control fs-4"
+                                    placeholder="Найди задачи по тегу"
+                                    name="name"
+                                ></textarea>
+                                <button
+                                    class="bg-info btn fs-5 btn-outline-info text-white"
+                                    type="submit"
+                                    id="button-addon1"
+                                >
+                                    Найти
+                                </button>
+                            </div>
+                        </form>
+                        <form
+                            class="w-50 mx-auto mb-5"
+                            id="formCreateTask"
+                            method="post"
+                        >
+                            <div class="input-group">
+                                <input type="hidden" name="id" value="1" />
+                                <input
+                                    type="hidden"
+                                    name="todo_id"
+                                    value="1"
+                                />
+                                <textarea
+                                    id="inputCreateTask"
+                                    type="text"
+                                    class="form-control fs-4"
+                                    placeholder="Назовите задачу"
+                                    name="name"
+                                ></textarea>
+                                <button
+                                    class="bg-primary btn fs-5 btn-outline-primary text-white"
+                                    type="submit"
+                                    id="button-addon1"
+                                >
+                                    Создать
+                                </button>
+                            </div>
+                        </form>
+                        <div class="tasks">
+                            <div
+                                class="task d-flex w-100 flex-column"
+                            >
+                                <div class="d-flex justify-content-between w-100 mb-2">
+
+                                    <img
+                                        class="me-3"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Ours_brun_parcanimalierpyrenees_1.jpg"
+                                        style="width: 150px; height: 150px"
+                                        alt=""
+                                    />
+                                    <form class="me-3" action="" method="post">
+                                        <input
+                                            class="form-control mb-2"
+                                            type="file"
+                                            id="formFile"
+                                        />
+                                        <input
+                                            class="w-100"
+                                            type="hidden"
+                                            name="id"
+                                            value="1"
+                                        />
+                                        <button
+                                            class="bg-success-subtle btn btn-outline-success w-100 text-black"
+                                            type="submit"
+                                        >
+                                            Добавить
+                                        </button>
+                                    </form>
+
+                                    <form
+                                        class="task mb-3 w-100 me-3"
+                                        id="task"
+                                        method="post"
+                                    >
+                                        <div class="input-group">
+                                            <input
+                                                type="hidden"
+                                                name="id"
+                                                value="1"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                name="todo_id"
+                                                value="1"
+                                            />
+                                            <textarea
+                                                id="inputCreateTask"
+                                                type="text"
+                                                class="form-control fs-4"
+                                                placeholder="Назовите задачу"
+                                                name="name"
+                                            ></textarea>
+                                            <button
+                                                class="bg-warning-subtle btn btn-outline-warning fs-5 text-black"
+                                                type="submit"
+                                                id="button-addon1"
+                                            >
+                                                Обновить
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <form class="" action="" method="post">
+                                        <input
+                                            class="w-100"
+                                            type="hidden"
+                                            name="id"
+                                            value="1"
+                                        />
+                                        <button
+                                            class="bg-danger-subtle btn btn-outline-danger w-100 text-black"
+                                            type="submit"
+                                        >
+                                            Удалить
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="">
+                                    <div class="tags mw-100 d-flex flex-wrap" style="width: fit-content;" id="tags">
+                                        <div class="input-group tag me-2 mb-2" id="tag" style="max-width: 360px; height: fit-content;">
+                                            <form action="" id="formUpdateTag" method="post"></form>
+                                            <form action="" id="formDeleteTag" method="post"></form>
+                                            <input
+                                                type="hidden"
+                                                name="todo_id"
+                                                value="1"
+                                                form="formUpdateTag"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                name="todo_id"
+                                                value="1"
+                                                form="formDeleteTag"
+                                            />  
+                                            <span class="input-group-text" id="basic-addon1">#</span>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="#План"
+                                                value="План"
+                                                name="name"
+                                                form="formUpdateTag"
+                                            />
+                                            <button
+                                                class="bg-warning-subtle btn btn-outline-warning text-black"
+                                                type="submit"
+                                                id="button-addon1"
+                                                form="formUpdateTag"
+                                            >
+                                                Обновить
+                                            </button>
+                                            <button
+                                                class="bg-danger-subtle btn btn-outline-danger text-black"
+                                                type="submit"
+                                                id="button-addon1"
+                                                form="formUpdateTag"
+                                            >
+                                                Удалить
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <form class="" action="" style="max-width: 360px;" method="post">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">#</span>
+                                            <input
+                                                id="inputCreateTodo"
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Назовите тэг"
+                                                name="name"
+                                            />
+                                            <button
+                                                class="bg-primary btn btn-outline-primary text-white"
+                                                type="submit"
+                                                id="button-addon1"
+                                            >
+                                                Создать
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"
+    ></script>
+    <script src="js/index.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
